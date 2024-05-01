@@ -22,5 +22,5 @@ outputs:
     description: The ID of the comment that was created.
 
 runs:
-  using: node18
+  using: 'node16'
   main: './dist/lib/index.js'
