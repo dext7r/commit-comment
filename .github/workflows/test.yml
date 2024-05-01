@@ -1,0 +1,13 @@
+name: test
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Commit Comment
+        uses: dext7r/commit-comment@main
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          body: 'This is a test comment.'
