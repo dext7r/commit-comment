@@ -1,6 +1,7 @@
 {
   "name": "commit-comment",
   "version": "1.1.0",
+  "type":"module",
   "description": "A GitHub Action to commit comment",
   "repository": {
     "type": "git",
@@ -23,51 +24,26 @@
     "url": "https://github.com/h7ml"
   },
   "sideEffects": [],
-  "main": "./dist/lib/index.js",
-  "module": "./dist/es/index.js",
-  "types": "./dist/types/index.d.ts",
+  "main": "./src/index.ts",
   "scripts": {
-    "build": "modern build",
-    "build:watch": "modern build -w",
-    "bump": "modern bump",
-    "change": "modern change",
-    "change-status": "modern change-status",
-    "dev": "modern dev",
-    "gen-release-note": "modern gen-release-note",
-    "lint": "modern lint",
-    "new": "modern new",
-    "pre": "modern pre",
-    "prepare": "modern build && husky install",
-    "release": "modern release",
-    "reset": "rimraf ./**/node_modules",
-    "upgrade": "modern upgrade"
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "build": "ncc build",
+    "format": "prettier --write src/*.ts",
+    "format-check": "prettier --check src/*.ts"
   },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx,mjs,cjs}": [
-      "node --max_old_space_size=8192 ./node_modules/eslint/bin/eslint.js --fix --color --cache --quiet"
-    ]
-  },
-  "eslintIgnore": [
-    "node_modules/",
-    "dist/"
-  ],
   "dependencies": {
     "@actions/core": "^1.10.1",
     "@actions/github": "^6.0.0",
-    "@octokit/rest": "^20.1.0",
-    "actions-util": "^1.1.4"
+    "@octokit/rest": "^20.1.0"
   },
   "devDependencies": {
-    "@modern-js/eslint-config": "2.49.2",
-    "@modern-js/module-tools": "2.49.2",
-    "@types/node": "~16.11.7",
-    "chalk": "^5.3.0",
-    "husky": "~8.0.1",
-    "lint-staged": "~13.1.0",
-    "prettier": "~2.8.1",
-    "rimraf": "~3.0.2",
-    "simple-git": "^3.24.0",
-    "typescript": "~5.0.4"
+    "@antfu/eslint-config": "^2.16.1",
+    "@umijs/fabric": "^4.0.1",
+    "@vercel/ncc": "0.38.1",
+    "eslint": "^9.1.1",
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.5"
   },
   "publishConfig": {
     "access": "public",
