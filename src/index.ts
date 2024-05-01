@@ -5,7 +5,7 @@ import { context } from '@actions/github';
 async function run() {
   try {
     const token = getInput('token');
-    const octokit = new Octokit({ auth: `token ${token}`, request: { fetch } });
+    const octokit = new Octokit({ auth: `token ${token}` });
     const { owner, repo } = context.repo;
     const body = getInput('body');
 
