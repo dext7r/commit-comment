@@ -1,0 +1,26 @@
+name: 'commit-comment'
+description: 'A GitHub Action to commit comment'
+author: 'h7ml <h7ml@qq.com>'
+
+branding:
+  icon: 'message-circle'
+  color: 'green'
+  version: 'v1.0.0'
+  author: 'h7ml'
+
+inputs:
+  token:
+    description: Secret GitHub API token to use for making API requests.
+    default: ${{ github.token }}
+    required: true
+  body:
+    description: Comment content.
+    required: true
+
+outputs:
+  comment_id:
+    description: The ID of the comment that was created.
+
+runs:
+  using: node16
+  main: './dist/lib/index.js'

@@ -1,0 +1,20 @@
+name: deploy website preview
+on:
+  pull_request:
+    branches:
+      - main
+  pull_request_target:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./
+        id: commit-comment
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          body: |
+            Website preview for commit ${GITHUB_SHA} at ${GITHUB_RUN_ATTEMPT}
+            - [Preview](https://h7ml.github.io/commit-comment)
+            - [Source code](https://github.com/h7ml/commit-comment)

@@ -1,23 +1,45 @@
 {
   "name": "commit-comment",
-  "version": "0.1.0",
-  "types": "./dist/types/index.d.ts",
+  "version": "1.0.0",
+  "description": "A GitHub Action to commit comment",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dext7r/commit-comment"
+  },
+  "homepage": "https://github.com/dext7r/commit-comment",
+  "bugs": {
+    "url": "https://github.com/dext7r/commit-comment/issues"
+  },
+  "keywords": [
+    "github",
+    "action",
+    "commit",
+    "comment"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "h7ml",
+    "email": "i@h7ml.cn",
+    "url": "https://github.com/h7ml"
+  },
+  "sideEffects": [],
   "main": "./dist/lib/index.js",
   "module": "./dist/es/index.js",
+  "types": "./dist/types/index.d.ts",
   "scripts": {
-    "prepare": "modern build && husky install",
-    "dev": "modern dev",
     "build": "modern build",
     "build:watch": "modern build -w",
-    "reset": "rimraf ./**/node_modules",
-    "lint": "modern lint",
-    "change": "modern change",
     "bump": "modern bump",
-    "pre": "modern pre",
+    "change": "modern change",
     "change-status": "modern change-status",
+    "dev": "modern dev",
     "gen-release-note": "modern gen-release-note",
-    "release": "modern release",
+    "lint": "modern lint",
     "new": "modern new",
+    "pre": "modern pre",
+    "prepare": "modern build && husky install",
+    "release": "modern release",
+    "reset": "rimraf ./**/node_modules",
     "upgrade": "modern upgrade"
   },
   "lint-staged": {
@@ -29,19 +51,24 @@
     "node_modules/",
     "dist/"
   ],
-  "dependencies": {},
-  "peerDependencies": {},
+  "dependencies": {
+    "@actions/core": "^1.10.1",
+    "@actions/github": "^6.0.0",
+    "@octokit/rest": "^20.1.0",
+    "actions-util": "^1.1.4"
+  },
   "devDependencies": {
-    "@modern-js/module-tools": "2.49.2",
     "@modern-js/eslint-config": "2.49.2",
-    "typescript": "~5.0.4",
+    "@modern-js/module-tools": "2.49.2",
     "@types/node": "~16.11.7",
-    "rimraf": "~3.0.2",
+    "chalk": "^5.3.0",
+    "husky": "~8.0.1",
     "lint-staged": "~13.1.0",
     "prettier": "~2.8.1",
-    "husky": "~8.0.1"
+    "rimraf": "~3.0.2",
+    "simple-git": "^3.24.0",
+    "typescript": "~5.0.4"
   },
-  "sideEffects": [],
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
