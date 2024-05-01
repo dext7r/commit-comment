@@ -49,7 +49,7 @@ jobs:
 
     steps:
       - name: Commit Comment
-        uses: h7ml/commit-comment@v1.0.0
+        uses: dext7r/commit-comment@v1.0.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           body: 'Hello from GitHub Action!'
