@@ -16,7 +16,7 @@ This GitHub Action allows you to automatically create a commit comment on a pull
 
    ```yaml
    - name: Commit Comment
-     uses: dext7r/commit-comment@v1.0.0
+     uses: dext7r/commit-comment-action@v1.0.0
      with:
        token: ${{ secrets.GITHUB_TOKEN }}
        body: 'This is a test comment.'
@@ -49,7 +49,7 @@ jobs:
 
     steps:
       - name: Commit Comment
-        uses: dext7r/commit-comment@v1.0.0
+        uses: dext7r/commit-comment-action@v1.0.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           body: 'Hello from GitHub Action!'

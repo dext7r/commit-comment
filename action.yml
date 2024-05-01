@@ -1,4 +1,4 @@
-name: 'commit-comment'
+name: 'commit-comment-action'
 description: 'A GitHub Action to commit comment'
 author: 'h7ml <h7ml@qq.com>'
 
@@ -22,5 +22,5 @@ outputs:
     description: The ID of the comment that was created.
 
 runs:
-  using: node16
+  using: node18
   main: './dist/lib/index.js'
