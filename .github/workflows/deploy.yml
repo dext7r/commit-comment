@@ -31,7 +31,7 @@ jobs:
             ${{ runner.os }}-pnpm-store-
       - name: Install
         run: |
-          pnpm Install
+          pnpm install
           pnpm build
       - uses: ./
         id: commit-comment
