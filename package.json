@@ -1,7 +1,6 @@
 {
   "name": "commit-comment",
   "version": "1.1.0",
-  "type":"module",
   "description": "A GitHub Action to commit comment",
   "repository": {
     "type": "git",

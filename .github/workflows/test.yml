@@ -1,6 +1,6 @@
 name: test
 on:
-  workflow_dispatch:
+  push:
 
 jobs:
   lint:
@@ -29,7 +29,7 @@ jobs:
       - name: Lint
         run: pnpm lint
       - name: Prettier
-        run: pnpm prettier  
+        run: pnpm format-check  
       - name: Build
         run: pnpm build  
   deploy:
@@ -45,5 +45,9 @@ jobs:
         uses: ./
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          body: |
-            date ${date}
+          body: |     
+             This commit was made with the following details:
+             - Commit ID: ${{ github.sha }}
+             - Commit Message: ${{ github.event.head_commit.message }}
+             - Run_id: ${{ github.run_id }}
+             - Repository: ${{ github.repository }}
