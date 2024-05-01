@@ -1,10 +1,12 @@
-name: deploy website preview
+name: deploy
 on:
   pull_request:
     branches:
       - main
   pull_request_target:
-
+  push:
+    branches:
+      - main
 jobs:
   deploy:
     runs-on: ubuntu-latest
